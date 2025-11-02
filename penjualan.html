@@ -225,6 +225,16 @@
         font-size: 0.85rem;
         color: #ff0000;
       }
+
+      .nav-link.active {
+        color: #fff !important;
+        background-color: #e9de08;
+        border-radius: 10px;
+        padding: 8px 16px;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
     </style>
   </head>
   <link
@@ -281,7 +291,7 @@
               <a class="nav-link text-black" href="laporan.html">Laporan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-black" href="#">About</a>
+              <a class="nav-link text-black" href="about.html">About</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -365,21 +375,117 @@
             <img
               src="https://nibble-images.b-cdn.net/nibble/original_images/resep_bubur_ayam_04_be2a72a6b8.jpeg?class=large"
               class="card-img-top"
-              alt="Nasi Goreng"
+              alt="Bubur Ayam"
             />
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Bubur Ayam Komplit Dewasa</h5>
+              <h5 class="card-title fw-bold">Bubur Ayam</h5>
               <div class="rating mb-2">⭐️⭐️⭐️⭐️☆</div>
               <p class="card-text text-muted flex-grow-1">
-                Bubur ayam gurih dengan topping lengkap — suwiran ayam, cakwe,
-                bawang goreng, dan kuah kaldu hangat yang menggoda selera. Cocok
-                disantap kapan saja!
+                Bubur ayam gurih dengan kuah kaldu hangat, cocok untuk semua
+                selera!
               </p>
               <div class="stock-info stock-ready mb-2">Stok: 25 Porsi</div>
-              <p class="fw-bold text-warning">Rp 14.000</p>
-              <button class="btn btn-warning text-white w-100">
+              <p class="fw-bold text-warning">Mulai Rp 10.000</p>
+              <button
+                class="btn btn-warning text-white w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#buburModal"
+              >
                 <i class="bi bi-cart-plus me-2"></i> Tambah ke Keranjang
               </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Pilihan -->
+        <div
+          class="modal fade"
+          id="buburModal"
+          tabindex="-1"
+          aria-labelledby="buburModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="buburModalLabel">
+                  Pilih Varian Bubur Ayam
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <form id="buburForm">
+                <div class="modal-body">
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="buburVariant"
+                      id="anak"
+                      value="Bubur Ayam Porsi Anak - Rp 10.000"
+                      required
+                    />
+                    <label class="form-check-label" for="anak">
+                      Bubur Ayam Porsi Anak — Rp 10.000
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="buburVariant"
+                      id="dewasa"
+                      value="Bubur Ayam Dewasa - Rp 14.000"
+                    />
+                    <label class="form-check-label" for="dewasa">
+                      Bubur Ayam Dewasa — Rp 14.000
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="buburVariant"
+                      id="komplit"
+                      value="Bubur Ayam Komplit - Rp 18.000"
+                    />
+                    <label class="form-check-label" for="komplit">
+                      Bubur Polos — Rp 8.000
+                    </label>
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Batal
+                  </button>
+                  <button type="submit" class="btn btn-warning text-white">
+                    <i class="bi bi-cart-plus me-2"></i> Tambah ke Keranjang
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifikasi sederhana -->
+        <div
+          id="toast"
+          class="position-fixed bottom-0 end-0 p-3"
+          style="z-index: 1100; display: none"
+        >
+          <div class="toast align-items-center text-bg-success border-0 show">
+            <div class="d-flex">
+              <div class="toast-body" id="toastMessage"></div>
             </div>
           </div>
         </div>
@@ -465,51 +571,6 @@
               </p>
               <div class="stock-info stock-ready mb-2">Stok: 30 Porsi</div>
               <p class="fw-bold text-warning">Rp 15.000</p>
-              <button class="btn btn-warning text-white w-100">
-                <i class="bi bi-cart-plus me-2"></i> Tambah ke Keranjang
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-          <div class="card shadow-sm border-0">
-            <span class="popular-badge">⭐ Populer</span>
-            <img
-              src="https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/bfd2cef5-dd14-4f29-98eb-1a2ca8300918_Go-Biz_20210130_093559.jpeg"
-              class="card-img-top"
-              alt="Sate Ayam"
-            />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Bubur Ayam Komplit Anak</h5>
-              <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="card-text text-muted flex-grow-1">
-                Bubur ayam lembut dengan porsi pas untuk anak-anak. Dilengkapi
-                suwiran ayam halus dan kuah kaldu gurih yang disukai si kecil.
-              </p>
-              <div class="stock-info stock-out mb-2">Stok Habis</div>
-              <p class="fw-bold text-warning">Rp 11.000</p>
-              <button class="btn btn-secondary text-white w-100" disabled>
-                Stok Habis
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-          <div class="card shadow-sm border-0">
-            <img
-              src="https://www.jagel.id/api/listimage/v/Bubur-Polos-0-28162d8a95ca8105.jpg"
-              class="card-img-top"
-              alt="Sate Ayam"
-            />
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title fw-bold">Bubur Polos</h5>
-              <div class="rating mb-2">⭐️⭐️⭐️⭐️⭐️</div>
-              <p class="card-text text-muted flex-grow-1">
-                Bubur nasi lembut tanpa tambahan lauk, cocok untuk sarapan
-                ringan atau menu pendamping.
-              </p>
-              <div class="stock-info stock-ready mb-2">Stok: 30 Porsi</div>
-              <p class="fw-bold text-warning">Rp 8.000</p>
               <button class="btn btn-warning text-white w-100">
                 <i class="bi bi-cart-plus me-2"></i> Tambah ke Keranjang
               </button>
@@ -1002,6 +1063,30 @@
         if (!searchBox.contains(e.target) && !input.contains(e.target)) {
           searchBox.style.display = "none";
         }
+      });
+
+      const buburForm = document.getElementById("buburForm");
+      const toast = document.getElementById("toast");
+      const toastMessage = document.getElementById("toastMessage");
+      const modal = new bootstrap.Modal(document.getElementById("buburModal"));
+
+      buburForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const selected = document.querySelector(
+          'input[name="buburVariant"]:checked'
+        ).value;
+
+        // Tutup modal
+        modal.hide();
+
+        // Tampilkan notifikasi
+        toastMessage.textContent = `✅ ${selected} berhasil ditambahkan ke keranjang!`;
+        toast.style.display = "block";
+
+        // Hilangkan toast otomatis setelah 3 detik
+        setTimeout(() => {
+          toast.style.display = "none";
+        }, 3000);
       });
     </script>
   </body>
