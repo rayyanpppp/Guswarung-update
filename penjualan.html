@@ -235,6 +235,45 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         transition: all 0.3s ease;
       }
+
+      /* Tombol keranjang melayang */
+      .floating-cart {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background-color: #ffc107;
+        color: #fff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        z-index: 1050; /* di atas elemen lain */
+      }
+
+      .floating-cart:hover {
+        background-color: #e0aa00;
+        transform: scale(1.08);
+      }
+
+      /* Badge jumlah item */
+      .cart-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #dc3545;
+        color: white;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 3px 6px;
+        line-height: 1;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
     </style>
   </head>
   <link
@@ -327,6 +366,7 @@
         </div>
       </div>
     </nav>
+
     <header class="hero-section">
       <div class="hero-overlay"></div>
       <div class="hero-content" data-aos="fade-up">
@@ -955,6 +995,11 @@
     <footer class="text-center py-3 bg-light shadow-sm">
       <small class="text-muted">© 2025 GusWarung. All rights reserved.</small>
     </footer>
+
+    <a href="keranjang.html" class="floating-cart">
+      <span class="material-symbols-outlined">shopping_cart</span>
+      <span class="cart-badge">3</span>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
