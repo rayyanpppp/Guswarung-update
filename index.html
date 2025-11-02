@@ -78,6 +78,17 @@
         margin-bottom: 0 !important;
         /* hilangkan offset bawah */
       }
+
+      .nav-link.active {
+        color: #fff !important;
+        background-color: #e9de08;
+        border-radius: 10px;
+        padding: 8px 16px;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+
       /* ======= HERO SECTION ======= */
 
       .hero {
@@ -554,16 +565,6 @@
           text-align: center;
         }
       }
-
-      .nav-link.active {
-        color: #fff !important;
-        background-color: #e9de08;
-        border-radius: 10px;
-        padding: 8px 16px;
-        font-weight: 600;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s ease;
-      }
     </style>
   </head>
 
@@ -639,9 +640,12 @@
               </a>
               <ul class="dropdown-menu bg-warning">
                 <li>
-                  <a class="dropdown-item text-white bg-warning" href="#"
-                    >Pengaturan</a
+                  <a
+                    class="dropdown-item text-white bg-warning"
+                    href="pengaturan.html"
                   >
+                    Pengaturan
+                  </a>
                 </li>
                 <li>
                   <a class="dropdown-item text-white bg-warning" href="#"
@@ -674,7 +678,7 @@
             style="
               max-width: 850px;
               border-radius: 18px;
-              background-color: #fffef8;
+              background-color: #ffe240;
               border: 1px solid #eee;
             "
           >
@@ -711,7 +715,7 @@
             style="
               max-width: 850px;
               border-radius: 18px;
-              background-color: #fffef8;
+              background-color: #ffe240;
               border: 1px solid #eee;
             "
           >
@@ -748,8 +752,8 @@
             style="
               max-width: 850px;
               border-radius: 18px;
-              background-color: #fffef8;
-              border: 1px solid #eee;
+              background-color: #ffe240;
+              border: 1px solid #ffffff;
             "
           >
             <p
@@ -761,7 +765,7 @@
                 line-height: 1.7;
               "
             >
-              Chef Gus Warung adalah sosok di balik setiap hidangan lezat yang
+              Chef Baguz adalah sosok di balik setiap hidangan lezat yang
               menjadi ciri khas Gus Warung. Berawal dari dapur sederhana warung
               keluarga, ia menghadirkan cita rasa Nusantara yang tetap autentik
               di era digital. Dengan dedikasi dan kecintaannya terhadap masakan
@@ -841,13 +845,15 @@
             Nasi kuning gurih dengan ayam goreng renyah, sambal pedas manis, dan
             pelengkap tradisional yang lezat.
           </p>
-          <a
-            href="penjualan.html"
-            style="margin-left: 85px"
-            class="btn btn-success px-4 py-2 fw-semibold rounded-pill shadow-sm"
-          >
-            Pesan Sekarang
-          </a>
+          <div class="text-center my-3">
+            <a
+              href="penjualan.html"
+              class="btn btn-success fw-semibold shadow-sm w-100 py-3 rounded-pill"
+              style="max-width: 300px"
+            >
+              Pesan Sekarang
+            </a>
+          </div>
         </div>
         <div class="menu-card">
           <img
@@ -860,7 +866,15 @@
             bawang goreng, dan kuah kaldu hangat yang menggoda selera. Cocok
             disantap kapan saja!
           </p>
-          <button>Pesan Sekarang</button>
+          <div class="text-center my-3">
+            <a
+              href="penjualan.html"
+              class="btn btn-success fw-semibold shadow-sm w-100 py-3 rounded-pill"
+              style="max-width: 300px"
+            >
+              Pesan Sekarang
+            </a>
+          </div>
         </div>
         <div class="menu-card">
           <img src="img/AyamBakar.jpg" alt="Ayam Bakar" />
@@ -869,7 +883,15 @@
             Ayam bakar dengan bumbu manis gurih khas tradisional, dibakar hingga
             matang sempurna dan harum menggoda selera.
           </p>
-          <button>Pesan Sekarang</button>
+          <div class="text-center my-3">
+            <a
+              href="penjualan.html"
+              class="btn btn-success fw-semibold shadow-sm w-100 py-3 rounded-pill"
+              style="max-width: 300px"
+            >
+              Pesan Sekarang
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -917,11 +939,13 @@
               menu pilihan hari ini! Cita rasa khas warung dengan potongan harga
               hingga 50%. Pesan sekarang sebelum kehabisan!
             </p>
-            <button
-              class="btn btn-success px-4 py-2 fw-semibold rounded-pill shadow-sm"
+            <a
+              href="penjualan.html"
+              class="btn btn-success fw-semibold shadow-sm w-100 py-3 rounded-pill"
+              style="max-width: 300px"
             >
               Pesan Sekarang
-            </button>
+            </a>
           </div>
         </div>
       </div>
